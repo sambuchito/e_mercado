@@ -50,7 +50,7 @@ function mostrarProductos(data) {
   
 
   // Obtener el primer elemento con la clase "lista-productos" que fue añadida en products.html
-  const listaProductos = document.getElementsByClassName("lista-productos")[0];
+  const listaProductos = document.getElementById("productosContainer");
 
 // Asignar el HTML generado a la estructura con la clase "lista-productos"
 listaProductos.innerHTML = listaHtml;
