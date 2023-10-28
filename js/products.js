@@ -56,7 +56,7 @@ function mostrarProductos(data) {
 listaProductos.innerHTML = listaHtml;
 
 // Agregar el HTML generado al contenedor de productos
-document.getElementById("productosContainer").innerHTML = listaHtml;
+/* document.getElementById("productosContainer").innerHTML = listaHtml; */
            
 
 /////////ENTREGA Nª3 CONSIGNA-1/////////
@@ -124,13 +124,15 @@ function filtrarbusqueda(data) {
     const descripcionLowerCase = item.description.toLowerCase(); /*para búsqueda por descripción*/
     return nombreLowerCase.includes(searchTextProducto) || descripcionLowerCase.includes(searchTextProducto);
   });
-  mostrarProductos({ products: filteredProductsBusqueda });
-  // if (filteredProductsBusqueda.length === 0) {
-  //   searchResultsProducto.innerHTML = '<p>No se encontraron resultados</p>';
-  // } else {
-
+  
+   if (filteredProductsBusqueda.length === 0) {
+    productosContainer.innerHTML = '<p>No se encontraron resultados</p>';
+   } else {
+    mostrarProductos({ products: filteredProductsBusqueda });
 
 }
+}
+
 
 // Esperar hasta que el contenido del DOM (estructura HTML) esté completamente cargado
 document.addEventListener("DOMContentLoaded", () => {
